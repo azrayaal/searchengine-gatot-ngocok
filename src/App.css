@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.gambarGatot {
+  pointer-events: none !important;
+}

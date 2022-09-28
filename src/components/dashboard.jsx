@@ -60,7 +60,7 @@ export default function Dashboard() {
         <div class="flex flex-wrap justify-center ">
           {/* <div class="absolute "> */}
           <div class="w-7/12 sm:w-72 px-4 absolute z-0 sm:top-14 top-16">
-            <img src={gatotngocok} alt="..." class="shadow rounded max-w-full h-auto align-middle border-none" />
+            <img src={gatotngocok} alt="..." class="shadow rounded max-w-full h-auto align-middle border-none gambarGatot" />
           </div>
           <h1 className="pb-8 text-center text-5xl font-bold text-slate-200 z-10" style={{ textShadow: '4px 4px black' }}>
             Gatot Ngocok
