@@ -1,13 +1,39 @@
 import React, { useState } from 'react';
 import 'boxicons';
 import gatotngocok from './gatotngocok.png';
+import { useEffect } from 'react';
 // import gatotgatau from './gatotGatau.png';
+const axios = require('axios');
 
 export default function Dashboard() {
   const [search, setSearch] = useState('');
   const [results, setResults] = useState([]);
   const [searchInfo, setSearchInfo] = useState({});
   const [yaNdakTau, setYaNdakTau] = useState('');
+
+  // async function handleSearch(e) {
+  //   e.preventDefault();
+  //   if (search === '') {
+  //     setYaNdakTau(
+  //       <>
+  //         <h1 className="text-center text-white text-4xl my-16">Ya ndak tau ko tanya saya...</h1>
+  //       </>
+  //     );
+  //   }
+  //   const response = await axios.get(`http://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=20&srsearch=${search}`);
+
+  //   const json = await response.json();
+  //   console.log('Json', json);
+
+  //   setResults(json.query.search);
+  //   setSearchInfo(json.query.searchinfo);
+
+  //   console.log('data=>', response);
+  // }
+
+  // useEffect(() => {
+  //   handleSearch();
+  // }, []);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -23,16 +49,9 @@ export default function Dashboard() {
     const json = await response.json();
 
     setResults(json.query.search);
-    // if (setResults(json.query.search) === '') {
-    //   setYaNdakTau(
-    //     <>
-    //       <h1 className="text-center text-white text-4xl my-16">Ya ndak tau ko tanya saya...</h1>
-    //     </>
-    //   );
-    // }
     setSearchInfo(json.query.searchinfo);
 
-    console.log('data=>', response);
+    // console.log('data=>', response);
   };
 
   return (
